@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasquala</title>
+
+    <style>
+        section {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 36px;
+        }
+
+        .word .letter {
+            display: inline-block;
+            border: 1px solid #ccc;
+            font-size: 90px;
+            min-width: 90px;
+            cursor: pointer;
+        }
+
+        .input-section .word-input,
+        .output-section .word-output {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .input-section .input-controls {
+            display: block;
+            text-align: center;
+            font-size: 36px;
+            width: 100%;
+        }
+
+        .input-section .input-controls .input-control {
+            text-decoration: none;
+            display: inline-block;
+            margin: 40px 20px;
+        }
+
+        .input-section .input-controls.reset .input-control {
+            display: none;
+        }
+
+        .input-section .input-controls.reset .input-reset {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <section class="input-section">
+            <p>¿Tu letra está en esta lista?</p>
+            <section class="word word-input"></section>
+            <section class="input-controls">
+                <a href="#" class="input-control input-yes" onclick="cycle('y')">Si</a>
+                <a href="#" class="input-control input-no" onclick="cycle('n')">No</a>
+                <a href="#" class="input-control input-reset" onclick="reset()">Reset</a>
+            </section>
+        </section>
+        <section class="output-section">
+            <p>Tu palabra</p>
+            <section class="word word-output"></section>
+        </section>
+    </div>
+
+<script>
+    const wordInput = document.querySelector('.word-input');
+    const wordOutput = document.querySelector('.word-output');
+    const inputControls = document.querySelector('.input-controls');
+
+    /* Logic */
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K','L','M', 'N', 'Ñ','O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let input = alphabet, i1, i2;
+    let output = [];
+
+    const renderWord = (word, target) => {
+        let result = '';
+        word.forEach(letter => result += `<article class="letter" onclick="addToOutput('${letter}')">${letter}</article>`);
+        target.innerHTML = result;
+    }
+
+    const cycle = (option) => {
+        if(option == 'y')
+            input = i1;   
+        else if(option == 'n')
+            input = i2; 
+
+       if(input.length > 2){
+            i1 = input.slice(0, Math.floor(input.length/2));
+            i2 = input.slice(Math.floor(input.length/2), input.length);       
+            renderWord(i1, wordInput);
+        }          
+        else {
+            renderWord(i2, wordInput);
+            inputControls.classList.add('reset');
+        }
+        
+    }
+
+    const reset = () => {
+        input = alphabet;
+        cycle();
+        inputControls.classList.remove('reset');
+    }
+
+    const addToOutput = (letter) => {
+        output.push(letter);
+        renderWord(output, wordOutput); 
+        reset();
+    }
+
+    cycle();
+
+</script>    
+</body>
+</html>

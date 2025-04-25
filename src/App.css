@@ -1,0 +1,170 @@
+.pasquala {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  header nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 20px;
+    
+    .nav-logo {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 600;
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-item {
+      text-transform: capitalize;
+    }
+
+    .nav-language {
+      text-transform: uppercase;
+    }
+  }
+  
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+    main {
+      overflow-y: auto;
+      padding: 20px;
+    }
+  
+    footer {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+  }  
+
+  /* homepage */
+  .page.page-home {
+    .words-list {
+      list-style-type: none;
+      font-size: 5vh;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+
+      .word {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        user-select: none;
+        
+        .word-description {
+          margin: 0;
+          padding: 0;
+        }
+
+        .word-remove {
+          opacity: 0;
+          font-size: var(--font-size-l);
+          font-weight: 300;
+          transform: rotate(45deg);
+          text-decoration: none;
+          transition: .5s ease opacity;
+        }
+
+        &:hover .word-remove {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /* newpage */
+  .page.page-new {
+    main {
+      text-align: center;
+      font-size: var(--font-size-m);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      .abc-section {
+        .abc-letters-list {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          
+          .abc-letter {
+            font-size: 10vh;
+            font-weight: 300;
+            display: inline-block;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: .3s ease transform;
+            text-transform: uppercase;
+          }
+
+          .abc-letter:hover {
+            transform: scale(1.2);
+          }
+        }
+
+        .abc-controls {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        }
+      }
+
+      .word-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        
+        form {
+          /* border: 2px solid var(--color-main); */
+          background: rgba(0,0,0,.03) ;
+          padding: 40px;
+          border-radius: 10px;
+        }
+
+        input {
+          background: transparent;
+          border: none;
+          font-size: var(--font-size-l);
+          font-weight: 400;
+          text-align: center;
+          border-bottom: 2px solid transparent;
+          transition: .5s ease border-color;
+          width: 100%;
+          text-transform: capitalize;
+
+          &:focus {
+            border-bottom: 2px solid var(--color-main);
+          }
+        }
+      }
+
+      
+    }
+  }
+    
+}
+  

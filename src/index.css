@@ -1,0 +1,103 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-main: black;
+  --color-secondary: white;
+
+  --font-size-s: 16px;
+  --font-size-m: 18px;
+  --font-size-l: 30px;
+  --font-size-xl: 35px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  color: var(--color-main);
+}
+
+button, .button {
+  display: inline-block;
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  background: var(--color-main);
+  color: var(--color-secondary);
+  border: 2px solid var(--color-main);
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: .3s ease-in-out all;
+  cursor: pointer;
+  margin: 0 5px;
+  text-align: center;
+}
+
+button:hover, .button:hover {
+  background: none;
+  color: var(--color-main);
+  text-decoration: none;
+}
+
+button.inverted, .button.inverted {
+  background: transparent;
+  color: var(--color-main);
+}
+
+button.square, .button.square {
+  width: 50px;
+}
+
+button.inverted:hover, .button.inverted:hover {
+  background: var(--color-main);
+  color: var(--color-secondary);
+}
+
+a,
+button.plain {
+  color: var(--color-main);
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-size: var(--font-size-s);
+  font-weight: normal;
+}
+
+a:hover,
+button.plain:hover {
+  text-decoration: underline;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+    
+    --color-main: black;
+    --color-secondary: white;
+  }
+ 
+} */

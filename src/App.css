@@ -10,9 +10,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--color-divider);
     padding: 20px;
-    
+    height: 65px;
+
     .nav-logo {
       margin: 0;
       font-size: 26px;
@@ -30,6 +31,47 @@
 
     .nav-language {
       text-transform: uppercase;
+      padding: 10px 0;
+    }
+
+    .left-nav {
+      display: flex;
+      align-items: center;
+    }
+    .nav-theme {
+      overflow: hidden;
+      display: flex;
+      margin-left: 10px;
+
+      .theme-graphic {
+        height: 100%;
+        width: 100%;
+        
+        .sun {
+          transition: .5s ease all;
+        }
+
+        .moon {
+          transition: .5s ease all;
+          opacity: 0;
+          transform: translate(0, 150%);
+        }
+      }
+
+      &.nav-theme-dark .theme-graphic {
+        .moon, .sun {
+          stroke: var(--color-main);
+        }
+
+        .moon {
+          opacity: 1;
+          transform: translate(0, 0%);
+        }
+        .sun {
+          opacity: 0;
+          transform: translate(0,150%);
+        }
+      } 
     }
   }
   
@@ -139,8 +181,7 @@
         margin-top: 40px;
         
         form {
-          /* border: 2px solid var(--color-main); */
-          background: rgba(0,0,0,.03) ;
+          background: var(--color-medium) ;
           padding: 40px;
           border-radius: 10px;
         }
@@ -155,6 +196,7 @@
           transition: .5s ease border-color;
           width: 100%;
           text-transform: capitalize;
+          color: var(--color-main);
 
           &:focus {
             border-bottom: 2px solid var(--color-main);
@@ -165,16 +207,41 @@
       
     }
   }
-    
+  
+  /* helpage */
+  .page.page-help main {
+    p, ol {
+      line-height: 1.7 ;
+    }
+  }
 
-  @media screen and (max-width: 768px){
-    .page.page-new {
-      main {
-        .abc-section .abc-letters-list .abc-letter {
-          font-size: var(--font-size-xl);
+  @media screen and (max-width: 767px){
+    .page.page-home {
+      .words-list .word .word-remove {
+        transition: none;
+      }
+    }
+
+    .page.page-new main {  
+      .abc-section .abc-letters-list .abc-letter {
+        font-size: var(--font-size-xl);
+        transition: none;
+
+        &:hover {
+          transform: none;
         }
       }
     }
   }
+
+  @media screen and (max-width: 402px){
+    .page.page-new main {  
+      .abc-section .abc-letters-list .abc-letter {
+        font-size: var(--font-size-l);
+      }
+    }
+  }
+
+
 }
   

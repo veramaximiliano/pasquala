@@ -8,11 +8,21 @@
 
   --color-main: black;
   --color-secondary: white;
+  --color-medium: rgba(0,0,0,0.03);
+  --color-divider: rgba(0,0,0,0.2);
 
   --font-size-s: 16px;
   --font-size-m: 18px;
-  --font-size-l: 30px;
-  --font-size-xl: 35px;
+  --font-size-l: 35px;
+  --font-size-xl: 55px;
+
+}
+
+[data-theme="dark"]{
+  --color-main: #dedede;
+  --color-secondary: #262a2e;
+  --color-medium: rgba(255,255,255,0.1);
+  --color-divider: rgba(255,255,255,0.2);
 }
 
 #root {
@@ -33,6 +43,7 @@ html, body {
 }
 
 body {
+  background-color: var(--color-secondary);
   color: var(--color-main);
 }
 
@@ -82,22 +93,43 @@ button.plain {
   font-weight: normal;
 }
 
-a:hover,
-button.plain:hover {
+h2, h3, strong {
+  font-weight: 600;
+}
+
+p a {
   text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ol li {
+  margin: 10px 0;
 }
 
 input:focus {
   outline: none;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-    
-    --color-main: black;
-    --color-secondary: white;
+@media screen and (max-width: 768px) {
+  button, .button {
+    transition: none;
+  } 
+
+  button:hover, .button:hover {
+    background: var(--color-main);
+    color: var(--color-secondary);
   }
- 
-} */
+
+  button.inverted:hover, .button.inverted:hover {
+    background: none;
+    color: var(--color-main);
+  }
+
+  button.plain:hover {
+    background: none;
+    color: var(--color-main)
+  }
+}

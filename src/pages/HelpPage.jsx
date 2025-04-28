@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 export default function HelpPage({language}){
     return(
         <article className="page page-help">
-            <main>
+            <main> 
+                <div className="help-wrapper">
             { 
                 language === 'es' && 
                 (<>
@@ -18,7 +19,8 @@ export default function HelpPage({language}){
                         <li><strong>El paciente piensa</strong> una palabra que quiera transmitir al usuario.</li>
                         <li><strong>Pantalla principal (Usuario)</strong>  <br/>
                             <ul>
-                                <li>Muestre la lista de Palabras de la pantalla principal al paciente, enunciándolas si es necesario.
+                                <li>Muestre la lista de Palabras de la pantalla principal al paciente, enunciándolas si es necesario. 
+                                    <br/> <strong>Tip:</strong> puede eliminar cualquier palabra de la lista tocando sobre ella y a continuación presionando la 'x' a su derecha.
                                 </li>
                                 <li>Si la palabra está aquí, el proceso finaliza.</li>
                                 <li>Si no, toque "Nueva palabra" (abajo) para acceder a esta pantalla.</li>
@@ -85,7 +87,7 @@ export default function HelpPage({language}){
                         <li><strong>The patient thinks of</strong> a word they want to convey to the user.</li>
                         <li><strong>Main screen (User)</strong>  <br/>
                             <ul>
-                                <li>Show the list of words on the main screen to the patient, enunciating them if necessary.</li>
+                                <li>Show the list of words on the main screen to the patient, enunciating them if necessary. <br/> <strong> Tip:</strong> To remove a word from the list, tap the word and then press the 'x' to its right.</li>
                                 <li>If the word is here, the process ends.</li>
                                 <li>If not, tap "New word" (below) to access this screen.</li>
                             </ul>
@@ -138,6 +140,7 @@ export default function HelpPage({language}){
                     
                  </>)
             }
+                </div>
             </main>
             <footer>
                 <Link to={-1} className="button inverted">{ defaults[language].ui['back'] }</Link>

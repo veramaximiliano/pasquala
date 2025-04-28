@@ -81,7 +81,6 @@
     justify-content: space-between;
     flex-grow: 1;
     overflow-y: auto;
-    max-width: 800px;
     width: 100%;
     margin: 0 auto;
 
@@ -93,7 +92,7 @@
     footer {
       display: flex;
       justify-content: center;
-      padding: 20px 0;
+      padding: 20px 0 40px;
     }
   }  
 
@@ -110,11 +109,11 @@
       .word {
         margin: 10px 0;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
         user-select: none;
         
         .word-description {
-          margin: 0;
+          margin: 0 20px 0 0;
           padding: 0;
         }
 
@@ -184,6 +183,7 @@
           background: var(--color-medium) ;
           padding: 40px;
           border-radius: 10px;
+          max-width: 500px;
         }
 
         input {
@@ -210,26 +210,57 @@
   
   /* helpage */
   .page.page-help main {
+
+    .help-wrapper {
+      max-width: 900px;
+      margin: auto;
+    }
+
     p, ol {
       line-height: 1.7 ;
     }
   }
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 1390px){
     .page.page-home {
-      .words-list .word .word-remove {
-        transition: none;
-      }
+      .words-list .word {
+        .word-remove {
+          transition: none;
+        }
+      } 
     }
 
     .page.page-new main {  
       .abc-section .abc-letters-list .abc-letter {
-        font-size: var(--font-size-xl);
         transition: none;
 
         &:hover {
           transform: none;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .page footer {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .page.page-home {
+      .words-list .word {
+        justify-content: space-between;
+
+        .word-description {
+          margin: 0;
+        }
+      } 
+    }
+
+    .page.page-new main {  
+      .abc-section .abc-letters-list .abc-letter {
+        font-size: var(--font-size-xl);
       }
     }
   }

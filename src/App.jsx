@@ -72,7 +72,6 @@ export default function App() {
             <Link className="nav-item" to="/help">{defaults[language].ui['help']}</Link>
           </nav>
         </header>
-        
         <Routes>
           <Route path="/" element={<HomePage language={language} words={words} onRemoveWord={handleRemoveWord}/>} />
           <Route path="/new" element={<NewPage language={language} onWordSave={handleWordSave}/>} />

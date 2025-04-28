@@ -58,7 +58,7 @@ button, .button {
   border-radius: 50px;
   transition: .3s ease-in-out all;
   cursor: pointer;
-  margin: 0 5px;
+  margin: 0 8px;
   text-align: center;
 }
 
@@ -113,7 +113,7 @@ input:focus {
   outline: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1390px) {
   button, .button {
     transition: none;
   } 

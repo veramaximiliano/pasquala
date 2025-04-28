@@ -6,7 +6,7 @@ let half1 = [], half2 = []
 
 export default function NewPage({language, onWordSave }){
     const [word, setWord] = useState(''),
-          [currentAlphabet, setCurrentAlphabet] = useState([])
+          [currentAlphabet, setCurrentAlphabet] = useState(defaults.alphabet.slice(0, Math.floor(defaults.alphabet.length/2)))
     
          
 
@@ -74,7 +74,7 @@ export default function NewPage({language, onWordSave }){
                 </section>
                 <section className="word-section">
                     <form onSubmit={(e) => { e.preventDefault(); onWordSave(word)}}>
-                        <input type="text" placeholder= {defaults[language].ui['your word']} value={ word } onChange={handleWordChange}/>
+                        <input type="text" spellcheck="false" placeholder= {defaults[language].ui['your word']} value={ word } onChange={handleWordChange}/>
                     </form>
                 </section>
             </main>

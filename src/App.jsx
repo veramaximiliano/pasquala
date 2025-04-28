@@ -60,7 +60,7 @@ export default function App() {
         <header>
           <nav>
             <div className="left-nav">
-              <button className="plain nav-item nav-language" onClick={ () => handleLanguageChange() }>{ language }</button>
+              <button className="plain nav-item nav-language" translate="no" onClick={ () => handleLanguageChange() }>{ language }</button>
               <button className={`plain nav-item nav-theme nav-theme-${theme}`} onClick={ () => handleThemeChange(theme === 'light' ? 'dark' : 'light') }>
                 <svg className="theme-graphic" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path className="sun" d="M11 4V1M11 21V18M4 11H1M21 11H18M6.05028 15.9497L3.92896 18.0711M18.0711 3.92893L15.9498 6.05025M15.9498 15.9497L18.0711 18.0711M3.92897 3.92893L6.05029 6.05025M15 11C15 13.2091 13.2091 15 11 15C8.79086 15 7 13.2091 7 11C7 8.79086 8.79086 7 11 7C13.2091 7 15 8.79086 15 11Z" stroke="black" strokeLinecap="round" strokeWidth="1.5"/>

@@ -58,7 +58,7 @@ export default function NewPage({language, onWordSave }){
                 <section className="abc-section">
                     <p>{ word.length > 0 ? defaults[language].ui['next letter question'] : defaults[language].ui['first letter question'] }</p>
                     <div className="abc-letters">
-                        <ul className="abc-letters-list">
+                        <ul className="abc-letters-list" translate="no">
                             {
                                 currentAlphabet.map((letter, index) => (
                                     <li key={index} className="abc-letter" onClick={() => handleAddLetter(letter) }>{letter}</li>
